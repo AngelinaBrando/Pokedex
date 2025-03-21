@@ -74,6 +74,7 @@ function getPokemonTypes(types) {
     ).join("");
 }
 
+
 function applyTypeColors() {
     document.querySelectorAll('.type').forEach(span => {
         const type = span.textContent.trim().toLowerCase();

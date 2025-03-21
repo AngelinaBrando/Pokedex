@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./pokemon.png" type="img/png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./png/pokemon.png" type="img/png">
 </head>
 <body onload="init()">
  
 <header>
-    <img class="pokemon-header" src="./pokemon.png" alt="">Podex
+    <img class="pokemon-header" src="./png/pokemon.png" alt="">Podex
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Suche Pokémon..." onkeyup="filterPokemon()">
         <div id="search-icon" onclick="toggleSearch()">🔍</div>
@@ -19,7 +19,7 @@
 </header>
 
 <div id="loading-spinner">
-    <img src="./pokemon.png" alt="Loading...">
+    <img src="./png/pokemon.png" alt="Loading...">
 </div>
 
 <main id="pokemon-container"></main>
@@ -30,7 +30,7 @@
         <div id="modal-info"></div>
     </div>
 </div>
-    <script src="./script.js"></script>
-    <script src="./colors.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/colors.js"></script>
 </body>
 </html>
