@@ -28,7 +28,7 @@ header {
     border-radius: 5px;
     border: 1px solid #ddd;
     width: 200px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 #search-icon {
@@ -50,6 +50,11 @@ header {
     display: flex;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-visible {
+    width: 100%;
+    max-width: 400px;
 }
 
 .search-overlay input {
@@ -121,15 +126,18 @@ header {
 
 #pokemon-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     max-width: 900px;
     margin: auto;
     margin-bottom: 80px;
     justify-content: center;
-}
+    padding: 20px;
+    place-items: center;
+    }
 
 .pokemon-card {
+    width: 200px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -264,18 +272,6 @@ header {
     opacity: 1;
 }
 
-@media (max-width: 1000px) {
-    #pokemon-container {
-        grid-template-columns: repeat(3, 170px);
-    }
-}
-
-
-@media (max-width: 600px) {
-    #pokemon-container {
-        grid-template-columns: repeat(2, 170px)
-    }
-}
 
 @media (max-width: 500px) {
     header {
@@ -291,18 +287,41 @@ header {
     }
 }
 
-@media (max-width: 400px) {
-    #pokemon-container {
-        grid-template-columns: repeat(1, 170px);
-    }
-}
 
 @media (max-width: 370px) {
     #search-input {
-        display: none;
+        position: absolute;
+        top: 60px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        background: white;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .search-visible {
+        opacity: 1;
+        visibility: visible;
     }
 
     #search-icon {
         display: block;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 5px;
+    }
+
+    .search-container {
+        position: relative;
+        margin-left: auto;
+        margin-right: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        max-width: 370px;
     }
 }
